@@ -45,7 +45,7 @@ export default function VerificationCallback() {
         setStatus('error');
         setMessage(error.message || 'Verification failed. Please try again.');
         // Redirect to home page after 5 seconds on error
-        setTimeout(() => navigate('/'), 5000);
+        setTimeout(() => navigate('/'), 20000);
       }
     };
 
