@@ -5,12 +5,13 @@ import { useState } from "react";
 
 export default function App() {
   const [requestUrl, setRequestUrl] = useState(null);
+  const BASE_URL = import.meta.env.VITE_API_URL;
 
   async function initializeReclaimForFlipkart() {
     try {
       // Step 1: Fetch the configuration from your backend
       const response = await fetch(
-        "http://localhost:3000/reclaim/generate-config-flipkart"
+        `${BASE_URL}/reclaim/generate-config-flipkart`
       );
       const { reclaimProofRequestConfig } = await response.json();
 
@@ -59,7 +60,7 @@ export default function App() {
   async function initializeReclaimForAmazon() {
     try {
       const response = await fetch(
-        "http://localhost:3000/reclaim/generate-config-amazon"
+        `${BASE_URL}/reclaim/generate-config-amazon`
       );
       const { reclaimProofRequestConfig } = await response.json();
 
